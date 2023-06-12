@@ -1,4 +1,4 @@
-import "../css/animation.css"
+import "../css/components/animation.css"
 
 
 export default function Animation(props){

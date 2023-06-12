@@ -1,26 +1,36 @@
 import { useState } from 'react'
 import Animation from './Animation';
-import '../css/titlescreen.css'
+import '../css/components/titlescreen.css'
 
 
-export default function TitleScreen(props){
+export default function TitleScreen(props) {
     const [hiddenClass, setHiddenClass] = useState('');
-    
-    function start(gamemode){
+
+    function start(gamemode) {
         setHiddenClass('hidden');
         props.setGamemode(gamemode);
     }
 
-    return(
+    function GameModeButton(props) {
+        return (
+            <button onClick={() => start(props.gamemode.toLowerCase())}>
+                {props.gamemode}
+            </button>
+        )
+    }
+
+
+    return (
         <>
-        <Animation className={hiddenClass} />
-        <section className={`titlescreen ${hiddenClass}`}>
-            <h1>SwiftCalc</h1>
-            <p>Complete mathematical operations as fast as you can</p>
-            <div style={{ display: 'flex' }}>
-                <button onClick={() => start('classic')}>Classic Mode</button>
-            </div>
-        </section>
+            <Animation className={hiddenClass} />
+            <section className={`titlescreen ${hiddenClass}`}>
+                <h1>SwiftCalc</h1>
+                <p>Complete mathematical operations as fast as you can</p>
+                <div style={{ display: 'flex', gap: '2rem' }}>
+                    <GameModeButton gamemode={'Classic'} />
+                    <GameModeButton gamemode={'Bomb'} />
+                </div>
+            </section>
         </>
     )
 }
