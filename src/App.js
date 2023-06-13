@@ -2,7 +2,7 @@ import { useState } from 'react';
 import TitleScreen from './componenets/TitleScreen';
 
 import './css/app.css';
-import Classic from './modes/Classic';
+import Run from './modes/Run';
 
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
 	return (
 		<>
 			<TitleScreen setGamemode={setGamemode}/>
-			{gamemode === 'run' ? <Classic /> : <></>}
+			{gamemode === 'run' ? <Run /> : <></>}
 		</>
 	);
 }
