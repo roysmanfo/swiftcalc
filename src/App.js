@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import TitleScreen from './componenets/TitleScreen';
+import TitleScreen from './components/TitleScreen';
 
 import './css/app.css';
 import Run from './modes/Run';

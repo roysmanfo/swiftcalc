@@ -1,12 +1,21 @@
-import React from "react";
 
+class Operation{
+    constructor(val1, val2, sign, result, guessed){
+        this.val1 = val1;
+        this.val2 = val2
+        this.sign = sign;
+        this.result = result;
+        this.guessed = guessed;
+    }
 
-function Operation(props) {
-    return (
-        <div className={`operation${props.guessed ? " guessed" : ""}`}>
-            <p>{props.val1} {props.sign} {props.val2} = {props.res}</p>
-        </div>
-    )
+    toString(){
+        return `${this.val1} ${this.sign} ${this.val2}`
+    }
+    // render (
+    //     <div className={`operation${props.guessed ? " guessed" : ""}`}>
+    //         <p>{props.val1} {props.sign} {props.val2} = {props.res}</p>
+    //     </div>
+    // )
 }
 
 export default function generateOperations() {
@@ -38,7 +47,7 @@ export default function generateOperations() {
             }
         }
 
-        allOperations.push(<Operation val1={v1} val2={v2} sign={sign} res={res} guessed={false} />);
+        allOperations.push(new Operation(v1, v2, sign, res, false));
         res = 9999;
     }
 
