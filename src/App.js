@@ -6,12 +6,12 @@ import Classic from './modes/Classic';
 
 
 function App() {
-	const [gamemode, setGamemode] = useState('classic');
+	const [gamemode, setGamemode] = useState('');
 
 	return (
 		<>
-			{/* <TitleScreen setGamemode={setGamemode}/> */}
-			{gamemode === 'classic' ? <Classic /> : <></>}
+			<TitleScreen setGamemode={setGamemode}/>
+			{gamemode === 'run' ? <Classic /> : <></>}
 		</>
 	);
 }

@@ -1,3 +1,5 @@
 body{
-    color: red;
+    color: #fff;
+    display: flex;
+    overflow: hidden;
 }
