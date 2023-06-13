@@ -8,10 +8,13 @@
   border-radius: 20px;
   text-align: center;
   transition: 250ms ease;
+  min-width: 50vw;
 }
 .titlescreen h1 {
-  font-size: 9em;
+  font-size: 5em;
   margin: 2rem 0;
+  text-align: center;
+  width: 100%;
   text-transform: uppercase;
   font-weight: 900;
 }
@@ -22,14 +25,39 @@
 .titlescreen button {
   font-size: 3em;
   background: #030303;
-  color: #222;
-  aspect-ratio: 16/9;
-  padding: 2em 4em;
+  color: #444;
+  padding: 2em;
   display: grid;
   place-items: center;
   height: -moz-max-content;
   height: max-content;
   margin: auto;
+  width: 100%;
+}
+.titlescreen button small {
+  font-size: 1rem;
+  color: #222;
+}
+.titlescreen .title, .titlescreen .gamemodes {
+  transition: 250ms ease;
+  z-index: 0;
+  width: 100%;
+}
+.titlescreen .hidden {
+  opacity: 0;
+  z-index: -9999;
+}
+.titlescreen .gamemodes {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.titlescreen .gamemodes .modes {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 50% 50%;
+  grid-template-areas: "run bomb" "survival survival";
 }
 
 .titlescreen.hidden {
