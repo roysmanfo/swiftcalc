@@ -35,17 +35,17 @@
   }
   63% {
     height: 1rem;
-    width: 40vw;
+    width: 30vw;
     transform: translateX(0);
   }
   75% {
     height: 1rem;
     width: 1rem;
-    transform: translateX(40vh);
+    transform: translateX(30vw);
   }
   88% {
     height: 1rem;
-    width: 40vw;
+    width: 30vw;
     transform: translateX(0);
   }
   100% {
@@ -82,17 +82,17 @@
   }
   63% {
     height: 1rem;
-    width: 40vw;
+    width: 30vw;
     transform: translateX(0);
   }
   75% {
     height: 1rem;
     width: 1rem;
-    transform: translateX(-40vh);
+    transform: translateX(-30vw);
   }
   88% {
     height: 1rem;
-    width: 40vw;
+    width: 30vw;
     transform: translateX(0);
   }
   100% {
@@ -104,13 +104,13 @@
 .animation.left {
   top: 0;
   left: 0;
-  animation: left 10s ease infinite;
+  animation: left 20s ease infinite;
 }
 
 .animation.right {
   bottom: 0;
   right: 0;
-  animation: right 10s ease infinite 0.75s;
+  animation: right 20s ease infinite 0.75s;
 }
 
 .animation.hidden{
