@@ -10,7 +10,7 @@ function App() {
 
 	return (
 		<>
-			<TitleScreen setGamemode={setGamemode}/>
+			{gamemode === '' ? <TitleScreen setGamemode={setGamemode}/> : <></>}
 			{gamemode === 'run' ? <Run /> : <></>}
 		</>
 	);

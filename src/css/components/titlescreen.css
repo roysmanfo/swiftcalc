@@ -60,6 +60,22 @@
   grid-template-areas: "run bomb" "survival survival";
 }
 
+.back-button {
+  display: flex;
+  position: fixed;
+  top: 3rem;
+  left: 3rem;
+  height: -moz-max-content;
+  height: max-content;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 1.5rem;
+  border-radius: 10px;
+  font-size: 2rem;
+  background: #030303;
+  color: #444;
+}
+
 .titlescreen.hidden {
   opacity: 0;
   z-index: -9999 !important;

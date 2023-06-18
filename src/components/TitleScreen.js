@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Animation from './Animation';
 import '../css/components/titlescreen.css'
-
+import leftArrowImg from "../img/svg/left-arrow.svg"
 
 export default function TitleScreen(props) {
     const [hiddenClass, setHiddenClass] = useState('');
@@ -42,6 +42,9 @@ export default function TitleScreen(props) {
     return (
         <>
             <Animation className={hiddenClass} />
+            <button onClick={() => setModesAreVisible(false)} title='Back to the title' className="back-button" style={modesAreVisible ? {} : {opacity: 0, zIndex: -9999}}>
+                <img src={leftArrowImg} alt='Arrow pointing left'/>
+            </button>
             <section className={`titlescreen ${hiddenClass}`}>
                 <div className={modesAreVisible ? "title hidden" : "title"}>
                     <h1 style={{ fontSize: '9em' }}>SwiftCalc</h1>

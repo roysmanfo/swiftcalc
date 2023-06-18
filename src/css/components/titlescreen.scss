@@ -23,6 +23,7 @@
         font-size: 2em;
         font-weight: 600;
     }
+
     button{
         font-size: 3em;
         background: #030303;
@@ -39,7 +40,6 @@
             color: #222;
         }
     }
-
     .title, .gamemodes{
         transition: 250ms ease;
         z-index: 0;
@@ -64,6 +64,19 @@
             grid-template-areas: "run bomb" "survival survival";
         }
     }
+}
+.back-button{
+    display: flex;
+    position: fixed;
+    top: 3rem;
+    left: 3rem;
+    height: max-content;
+    width: max-content;
+    padding: 1.5rem;
+    border-radius: 10px;
+    font-size: 2rem;
+    background: #030303;
+    color: #444;
 }
 .titlescreen.hidden{
     opacity: 0;
