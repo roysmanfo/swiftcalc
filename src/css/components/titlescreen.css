@@ -39,13 +39,22 @@
   color: #222;
 }
 .titlescreen .title, .titlescreen .gamemodes {
-  transition: 250ms ease;
+  transition: 1s ease;
   z-index: 0;
-  width: 100%;
+  width: -moz-max-content;
+  width: max-content;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .titlescreen .hidden {
   opacity: 0;
   z-index: -9999;
+  transform: translate(-50%, 200%) !important;
 }
 .titlescreen .gamemodes {
   position: absolute;
