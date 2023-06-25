@@ -11,11 +11,6 @@ class Operation{
     toString(){
         return `${this.val1} ${this.sign} ${this.val2}`
     }
-    // render (
-    //     <div className={`operation${props.guessed ? " guessed" : ""}`}>
-    //         <p>{props.val1} {props.sign} {props.val2} = {props.res}</p>
-    //     </div>
-    // )
 }
 
 export default function generateOperations(max) {
