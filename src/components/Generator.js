@@ -18,7 +18,7 @@ class Operation{
     // )
 }
 
-export default function generateOperations() {
+export default function generateOperations(max) {
     const allOperations = [];
     const signs = ['+', '-', '*', '/'];
     let v1;
@@ -26,7 +26,7 @@ export default function generateOperations() {
     let sign;
     let limit;
     
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < max; i++) {
         let res = 9999;
         while (res > 40) {
             sign = signs[Math.round(Math.random() * (signs.length - 1))];
