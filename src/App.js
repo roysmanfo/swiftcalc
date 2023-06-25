@@ -11,7 +11,7 @@ function App() {
 	return (
 		<>
 			{gamemode === '' ? <TitleScreen setGamemode={setGamemode}/> : <></>}
-			{gamemode === 'run' ? <Run /> : <></>}
+			{gamemode === 'run' ? <Run setGamemode={setGamemode} /> : <></>}
 		</>
 	);
 }
