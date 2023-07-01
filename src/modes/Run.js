@@ -3,12 +3,20 @@ import "../css/modes/run.css";
 import Animation from "../components/Animation";
 import Timer from "../components/Timer";
 import generateOperations from "../components/Generator";
+import Finish from "../components/Finish";
 
-const operations = generateOperations();
-export default function Run() {
+const MAX_OPERATIONS = 1;
+const operations = generateOperations(MAX_OPERATIONS);
+
+export default function Run(props) {
+    const [time, setTime] = useState("0");
+
     const inputRef = useRef(null);
-    const [inputValue, setInputValue] = useState('');
-    console.log(operations[0]);
+    const [inputValue, setInputValue] = useState("");
+    const [operationIndex, setOperationIndex] = useState(0);
+    const [completed, setCompleted] = useState(false);
+    const [mistakes, setMinstakes] = useState(0);
+
     const handleGlobalMouseDown = (event) => {
         if (!inputRef.current.contains(event.target)) {
             inputRef.current.focus();
@@ -17,7 +25,15 @@ export default function Run() {
     };
 
     const handleKeyDown = () => {
-        console.log(inputValue);
+        if (parseInt(inputValue) === operations[operationIndex].result) {
+            operations[operationIndex].guessed = true;
+            setInputValue("");
+            if (operationIndex !== MAX_OPERATIONS - 1)
+                setOperationIndex(operationIndex + 1);
+            else setCompleted(true);
+        } else {
+            setMinstakes(mistakes + 1);
+        }
     };
 
     useEffect(() => {
@@ -32,16 +48,39 @@ export default function Run() {
         };
     }, []); // Empty dependency array to ensure the effect runs only once
 
-    return (
-        <>
-            <Animation />
-            <main>
-                <Timer />
+    useEffect(() => {
+        inputRef.current.focus(); // Set focus on the input field after each re-render
+    });
+
+    function GameView() {
+        return (
+            <main className={`${completed ? "hidden" : ""}`}>
                 <section className="game-view">
-                    <h1 className="op">{operations[0].toString()}</h1>
-                    <input className="input" type="number" ref={inputRef} value={inputValue} onChange={(e) => setInputValue(e.target.value)} onKeyDown={(e) => e.key === 'Enter' ? handleKeyDown() : null} />
+                    <h1 className="op">{operations[operationIndex].toString()}</h1>
+                    <input
+                        className="input"
+                        type="number"
+                        ref={inputRef}
+                        value={inputValue}
+                        onChange={(e) => setInputValue(e.target.value)}
+                        onKeyDown={(e) => (e.key === "Enter" ? handleKeyDown() : null)}
+                    />
                 </section>
             </main>
+        );
+    }
+
+    return (
+        <>
+            <Animation className="" />
+            <Timer setTime={setTime} stop={completed} className={`${completed ? "hidden" : ""}`} />
+            <Finish
+                time={time}
+                mistakes={mistakes}
+                setGamemode={props.setGamemode}
+                hidden={!completed}
+            />
+            <GameView />
         </>
     );
 }
