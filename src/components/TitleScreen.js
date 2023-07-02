@@ -29,7 +29,7 @@ export default function TitleScreen(props) {
 
     function start(gamemode) {
         setHiddenClass('hidden');
-        props.setGamemode(gamemode);
+        // props.setGamemode(gamemode);
     }
 
     function GameModeButton(props) {
