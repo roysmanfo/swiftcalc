@@ -17,7 +17,7 @@ export default function Run() {
     const [completed, setCompleted] = useState(false);
     const [mistakes, setMinstakes] = useState(0);
     const [isWrong, setIsWrong] = useState(false);
-        
+
     const handleGlobalMouseDown = (event) => {
         if (!inputRef.current.contains(event.target)) {
             inputRef.current.focus();
@@ -35,9 +35,9 @@ export default function Run() {
         } else {
             setMinstakes(mistakes + 1);
             setIsWrong(true);
-            inputRef.current.value = '';
             setTimeout(() => {
                 setIsWrong(false);
+                inputRef.current.focus();
             }, 500);
         }
     };
@@ -62,7 +62,9 @@ export default function Run() {
         return (
             <main className={`${completed ? "hidden" : ""}`}>
                 <section className="game-view">
-                    <h1 className={isWrong ? 'op wrong' : 'op'}>{operations[operationIndex].toString()}</h1>
+                    <h1 className={isWrong ? "op wrong" : "op"}>
+                        {operations[operationIndex].toString()}
+                    </h1>
                     <input
                         className="input"
                         type="number"
@@ -80,11 +82,7 @@ export default function Run() {
         <>
             <Animation className="" />
             <Timer setTime={setTime} stop={completed} className={`${completed ? "hidden" : ""}`} />
-            <Finish
-                time={time}
-                mistakes={mistakes}
-                hidden={!completed}
-            />
+            <Finish time={time} mistakes={mistakes} hidden={!completed} />
             <GameView />
         </>
     );
