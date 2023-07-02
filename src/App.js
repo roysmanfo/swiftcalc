@@ -1,19 +1,10 @@
-import { useState } from 'react';
 import TitleScreen from './components/TitleScreen';
-
 import './css/app.css';
-import Run from './modes/Run';
 
 
-function App() {
-	const [gamemode, setGamemode] = useState('');
-
+export default function App() {
 	return (
-		<>
-			{gamemode === '' ? <TitleScreen setGamemode={setGamemode}/> : <></>}
-			{gamemode === 'run' ? <Run setGamemode={setGamemode} /> : <></>}
-		</>
+		<TitleScreen/>
 	);
 }
 
-export default App;

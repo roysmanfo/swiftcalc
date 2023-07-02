@@ -8,7 +8,7 @@ import Finish from "../components/Finish";
 const MAX_OPERATIONS = 1;
 const operations = generateOperations(MAX_OPERATIONS);
 
-export default function Run(props) {
+export default function Run() {
     const [time, setTime] = useState("0");
 
     const inputRef = useRef(null);
@@ -77,7 +77,6 @@ export default function Run(props) {
             <Finish
                 time={time}
                 mistakes={mistakes}
-                setGamemode={props.setGamemode}
                 hidden={!completed}
             />
             <GameView />

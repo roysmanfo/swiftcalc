@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../css/components/finish.css"
 
 export default function Finish(props) {
@@ -16,7 +17,9 @@ export default function Finish(props) {
                         <p>{props.mistakes}</p>
                     </div>
                 </div>
-                <button onClick={() => props.setGamemode('')}>Go back to title</button>
+                <Link to='/'>
+                    <button>Go back to title</button>
+                </Link>
             </section>
         </>
     )

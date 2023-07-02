@@ -1,7 +1,10 @@
-import { useState } from 'react'
+import { useState } from 'react';
 import Animation from './Animation';
+import { Link } from 'react-router-dom';
+
 import '../css/components/titlescreen.css'
 import leftArrowImg from "../img/svg/left-arrow.svg"
+
 
 export default function TitleScreen(props) {
     const [hiddenClass, setHiddenClass] = useState('');
@@ -31,10 +34,12 @@ export default function TitleScreen(props) {
 
     function GameModeButton(props) {
         return (
-            <button style={{ gridArea: props.gamemode.toLowerCase() }} onClick={() => start(props.gamemode.toLowerCase())}>
-                {props.gamemode}
-                <small>{props.description}</small>
-            </button>
+            <Link to={'/mode/' + props.gamemode.toLowerCase()}>
+                <button style={{ gridArea: props.gamemode.toLowerCase() }} onClick={() => start(props.gamemode.toLowerCase())}>
+                    {props.gamemode}
+                    <small>{props.description}</small>
+                </button>
+            </Link>
         )
     }
 
