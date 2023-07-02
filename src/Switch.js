@@ -7,6 +7,6 @@ export default function Switch(){
     
     switch(gamemode){
         case 'run': return <Run />;
-        default: return <></>;
+        default: window.location.href = '/';
     }
 }
