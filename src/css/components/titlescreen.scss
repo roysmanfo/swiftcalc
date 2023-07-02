@@ -68,6 +68,10 @@
             gap: 2rem;
             grid-template-columns: 1fr 1fr;
             grid-template-areas: "run bomb" "survival survival";
+
+            a{
+                text-decoration: none;
+            }
         }
     }
 }

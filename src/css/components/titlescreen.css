@@ -65,6 +65,9 @@
   grid-template-columns: 1fr 1fr;
   grid-template-areas: "run bomb" "survival survival";
 }
+.titlescreen .gamemodes .modes a {
+  text-decoration: none;
+}
 
 .back-button {
   display: flex;
