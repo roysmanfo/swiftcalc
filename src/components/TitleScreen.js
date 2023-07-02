@@ -27,15 +27,14 @@ export default function TitleScreen(props) {
 
 
 
-    function start(gamemode) {
+    function start() {
         setHiddenClass('hidden');
-        // props.setGamemode(gamemode);
     }
 
     function GameModeButton(props) {
         return (
-            <Link to={'/mode/' + props.gamemode.toLowerCase()}>
-                <button style={{ gridArea: props.gamemode.toLowerCase() }} onClick={() => start(props.gamemode.toLowerCase())}>
+            <Link to={'/mode/' + props.gamemode.toLowerCase()} style={{ gridArea: props.gamemode.toLowerCase() }}>
+                <button onClick={() => start()}>
                     {props.gamemode}
                     <small>{props.description}</small>
                 </button>

@@ -16,7 +16,7 @@ export default function Run() {
     const [operationIndex, setOperationIndex] = useState(0);
     const [completed, setCompleted] = useState(false);
     const [mistakes, setMinstakes] = useState(0);
-
+        
     const handleGlobalMouseDown = (event) => {
         if (!inputRef.current.contains(event.target)) {
             inputRef.current.focus();
@@ -33,6 +33,7 @@ export default function Run() {
             else setCompleted(true);
         } else {
             setMinstakes(mistakes + 1);
+
         }
     };
 
