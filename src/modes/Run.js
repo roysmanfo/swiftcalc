@@ -16,6 +16,7 @@ export default function Run() {
     const [operationIndex, setOperationIndex] = useState(0);
     const [completed, setCompleted] = useState(false);
     const [mistakes, setMinstakes] = useState(0);
+    const [isWrong, setIsWrong] = useState(false);
         
     const handleGlobalMouseDown = (event) => {
         if (!inputRef.current.contains(event.target)) {
@@ -33,7 +34,11 @@ export default function Run() {
             else setCompleted(true);
         } else {
             setMinstakes(mistakes + 1);
-
+            setIsWrong(true);
+            inputRef.current.value = '';
+            setTimeout(() => {
+                setIsWrong(false);
+            }, 500);
         }
     };
 
@@ -57,7 +62,7 @@ export default function Run() {
         return (
             <main className={`${completed ? "hidden" : ""}`}>
                 <section className="game-view">
-                    <h1 className="op">{operations[operationIndex].toString()}</h1>
+                    <h1 className={isWrong ? 'op wrong' : 'op'}>{operations[operationIndex].toString()}</h1>
                     <input
                         className="input"
                         type="number"

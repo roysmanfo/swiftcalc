@@ -1,3 +1,8 @@
+:root{
+    --shake: 2rem;
+}
+
+
 body{
     color: #fff;
     display: flex;
@@ -26,6 +31,17 @@ main.hidden{
 }
 .game-view .op{
     font-size: 10em;
+}
+@keyframes shake {
+    0% {transform: translateX(0);}
+    25% {transform: translateX(var(--shake));}
+    50% {transform: translateX(0);}
+    75% {transform: translateX(calc(var(--shake) * -1));}
+    100% {transform: translateX(0);}
+}
+.game-view .op.wrong{
+    color: #f55;
+    animation: shake .25s forwards;
 }
 .input{
     font-size: 6em;
