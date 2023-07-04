@@ -4,8 +4,10 @@ import Animation from "../components/Animation";
 import Timer from "../components/Timer";
 import generateOperations from "../components/Generator";
 import Finish from "../components/Finish";
+import Counter from "../components/Counter";
 
-const MAX_OPERATIONS = 1;
+
+const MAX_OPERATIONS = 20;
 const operations = generateOperations(MAX_OPERATIONS);
 
 export default function Run() {
@@ -81,6 +83,7 @@ export default function Run() {
     return (
         <>
             <Animation className="" />
+            <Counter mode='run' totalOperations={MAX_OPERATIONS} curentOperation={operationIndex + 1} />
             <Timer setTime={setTime} stop={completed} className={`${completed ? "hidden" : ""}`} />
             <Finish time={time} mistakes={mistakes} hidden={!completed} />
             <GameView />
