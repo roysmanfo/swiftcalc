@@ -17,8 +17,9 @@ export default function Finish(props) {
                         <p>{props.mistakes}</p>
                     </div>
                 </div>
+                <button onClick={() => window.location.reload()}>Play again</button>
                 <Link to='/'>
-                    <button>Go back to title</button>
+                    <button>Title Screen</button>
                 </Link>
             </section>
         </>
