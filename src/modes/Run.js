@@ -5,6 +5,7 @@ import Timer from "../components/Timer";
 import generateOperations from "../components/Generator";
 import Finish from "../components/Finish";
 import Counter from "../components/Counter";
+import Countdown from "../components/Countdown";
 
 
 const MAX_OPERATIONS = 30;
@@ -82,6 +83,7 @@ export default function Run() {
 
     return (
         <>
+            <Countdown />
             <Animation className="" />
             <Counter mode='run' totalOperations={MAX_OPERATIONS} curentOperation={operationIndex + 1} />
             <Timer setTime={setTime} stop={completed} className={`${completed ? "hidden" : ""}`} />

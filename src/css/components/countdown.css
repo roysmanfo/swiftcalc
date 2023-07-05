@@ -1,0 +1,30 @@
+.countdown{
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    background: #000;
+    color: #fff;
+    display: grid;
+    place-items: center;
+    /* transition: .1s ease; */
+    z-index: 10;
+}
+
+.countdown.hidden{
+    opacity: 0;
+    z-index: -9999 !important;
+}
+@keyframes prettify {
+    0% {filter: drop-shadow(0 0 #60f);}
+    25% {filter: drop-shadow(1rem 1rem #60f);}
+    75% {filter: drop-shadow(1rem 1rem #60f);}
+    100% {filter: drop-shadow(0 0 #60f);}
+}
+.countdown .count{
+    font-size: 15rem;
+    font-weight: 700;
+}
+
+.countdown .count.pretty{
+    animation: prettify 1s ease infinite;
+}
