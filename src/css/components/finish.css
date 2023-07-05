@@ -27,9 +27,9 @@
 
 .finish-screen .stats{
     margin: 2rem 0 5rem;
-    display: grid;
-    grid-template-rows: auto;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    /* grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr; */
 }
 .stats h2{
     font-size: 3rem;
@@ -58,3 +58,4 @@
     font-size: 2rem;
     margin-inline: 1rem;
 }
+.stat{flex-grow: 1;}

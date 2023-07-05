@@ -10,4 +10,9 @@
     font-weight: 900;
     font-size: 3rem;
     filter: drop-shadow(5px 4px 0 #60f);
+    transition: 250ms ease;
+}
+.timer.hidden{
+    opacity: 0;
+    z-index: -9999;
 }

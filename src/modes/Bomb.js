@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import "../css/modes/run.css";
 import Animation from "../components/Animation";
-import Timer from "../components/Timer";
+import CountDownTimer from "../components/CountDownTimer";
 import generateOperations from "../components/Generator";
 import Finish from "../components/Finish";
 import Counter from "../components/Counter";
@@ -12,7 +12,7 @@ const MAX_OPERATIONS = 30;
 const operations = generateOperations(MAX_OPERATIONS);
 
 export default function Bomb() {
-    const [time, setTime] = useState("0");
+    const [time, setTime] = useState("1:00");
 
     const inputRef = useRef(null);
     const [inputValue, setInputValue] = useState("");
@@ -32,7 +32,7 @@ export default function Bomb() {
         if (parseInt(inputValue) === operations[operationIndex].result) {
             operations[operationIndex].guessed = true;
             setInputValue("");
-            if (operationIndex !== MAX_OPERATIONS - 1)
+            if (time !== '0:00')
                 setOperationIndex(operationIndex + 1);
             else setCompleted(true);
         } else {
@@ -43,6 +43,10 @@ export default function Bomb() {
                 inputRef.current.focus();
             }, 500);
         }
+        
+        // Generate more operations if needed
+        if (operationIndex === operations.length - 1)
+            generateOperations(MAX_OPERATIONS).forEach((op) => operations.push(op))
     };
 
     useEffect(() => {
@@ -83,11 +87,11 @@ export default function Bomb() {
 
     return (
         <>
-            {/* <Countdown /> */}
+            <Countdown />
             <Animation className="" />
             <Counter mode='bomb' curentOperation={operationIndex} />
-            <Timer setTime={setTime} stop={completed} className={`${completed ? "hidden" : ""}`} />
-            <Finish time={time} mistakes={mistakes} hidden={!completed} />
+            <CountDownTimer direction='down' start={time} setTime={setTime} stop={completed} setStop={setCompleted} />
+            <Finish hideTime time={time} guessed={operationIndex} mistakes={mistakes} hidden={!completed} />
             <GameView />
         </>
     );
