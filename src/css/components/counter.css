@@ -1,5 +1,4 @@
 .counter{
-    background: #111;
     color: #fff;
     height: max-content;
     width: max-content;
@@ -8,7 +7,7 @@
     left: 2rem;
     padding: 1rem 4rem;
     border-radius: 10px;
-    font-weight: 700;
+    font-weight: 900;
     font-size: 3rem;
-    /* font-family: monospace; */
+    filter: drop-shadow(5px 4px 0 #60f);
 }
