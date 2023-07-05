@@ -7,7 +7,7 @@ import Finish from "../components/Finish";
 import Counter from "../components/Counter";
 
 
-const MAX_OPERATIONS = 20;
+const MAX_OPERATIONS = 30;
 const operations = generateOperations(MAX_OPERATIONS);
 
 export default function Run() {
