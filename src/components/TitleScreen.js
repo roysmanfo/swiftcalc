@@ -12,11 +12,11 @@ export default function TitleScreen(props) {
     const modes = [
         {
             "name": "Run",
-            "description": "Do 20 operation as fast as you can"
+            "description": "Do 30 operation as fast as you can"
         },
         {
             "name": "Bomb",
-            "description": "It is similar to run, but you only have 1min 30s"
+            "description": "Do as many points as you can in 1 minute"
         },
         {
             "name": "Survival",
