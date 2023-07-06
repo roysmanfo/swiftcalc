@@ -1,0 +1,23 @@
+.life-counter{
+    color: #fff;
+    height: max-content;
+    width: max-content;
+    position: absolute;
+    top: 7rem;
+    right: 2rem;
+    padding: 1rem 4rem;
+    border-radius: 10px;
+    font-weight: 900;
+    font-size: 3rem;
+    filter: drop-shadow(5px 2px 0 #60f);
+    transition: 250ms ease;
+    display: flex;
+    gap: 1rem;
+}
+.life-counter.red{
+    filter: drop-shadow(5px 2px 0 #f11);
+}
+.life-counter.hidden{
+    opacity: 0;
+    z-index: -9999;
+}

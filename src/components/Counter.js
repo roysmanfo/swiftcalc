@@ -15,6 +15,8 @@ export default function Counter(props) {
             )
 
         case 'bomb':
+        case 'survival':
+        case 'hardcore':
             return (
                 <div className="counter">
                     {currOP}
