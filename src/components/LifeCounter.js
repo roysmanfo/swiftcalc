@@ -1,5 +1,6 @@
 import "../css/components/lifecounter.css"
 import heart from "../img/svg/heart.svg"
+import "../css/responsive.css"
 
 
 export default function LifeCounter(props) {

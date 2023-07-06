@@ -1,0 +1,8 @@
+@media screen and (max-width: 1000px) {
+  .titlescreen h1 {
+    font-size: 2em;
+  }
+  .titlescreen p {
+    font-size: 1em;
+  }
+}/*# sourceMappingURL=responsive.css.map */

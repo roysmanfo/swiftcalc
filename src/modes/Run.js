@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import "../css/modes/modes.css";
+import "../css/responsive.css"
 import Animation from "../components/Animation";
 import Timer from "../components/Timer";
 import generateOperations from "../components/Generator";

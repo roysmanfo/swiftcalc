@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../css/components/finish.css"
+import "../css/responsive.css"
 
 export default function Finish(props) {
 

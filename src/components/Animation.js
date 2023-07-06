@@ -1,5 +1,5 @@
 import "../css/components/animation.css"
-
+import "../css/responsive.css"
 
 export default function Animation(props){
     return(

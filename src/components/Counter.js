@@ -1,4 +1,5 @@
 import "../css/components/counter.css"
+import "../css/responsive.css"
 
 
 export default function Counter(props) {

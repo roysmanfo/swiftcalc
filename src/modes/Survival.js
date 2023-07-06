@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import "../css/modes/modes.css";
+import "../css/responsive.css"
 import Animation from "../components/Animation";
 import generateOperations from "../components/Generator";
 import Finish from "../components/Finish";

@@ -1,5 +1,6 @@
 import { useState } from "react"
 import "../css/components/countdown.css"
+import "../css/responsive.css"
 
 
 export default function Countdown(){

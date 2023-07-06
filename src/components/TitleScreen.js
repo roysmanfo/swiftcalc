@@ -55,7 +55,7 @@ export default function TitleScreen(props) {
             </button>
             <section className={`titlescreen ${hiddenClass}`}>
                 <div className={modesAreVisible ? "title hidden" : "title"}>
-                    <h1 style={{ fontSize: '9em' }}>SwiftCalc </h1>
+                    <h1>SwiftCalc </h1>
                     <p>Complete mathematical operations as fast as you can</p>
                     <button onClick={() => setModesAreVisible(true)}>Select a mode</button>
                 </div>

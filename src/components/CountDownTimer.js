@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import '../css/components/timer.css';
+import "../css/responsive.css"
 
 export default function CountDownTimer(props) {
     const [seconds, setSeconds] = useState(parseInt(props.start.substring(props.start.indexOf(":") + 1)) + 4);
