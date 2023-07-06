@@ -104,7 +104,7 @@ export default function Hardcore() {
             <Countdown />
             <Animation className="" />
             <LifeCounter lifes={lifes} completed={completed} />
-            <Counter mode='survival' curentOperation={operationIndex} />
+            <Counter mode='hardcore' curentOperation={operationIndex} />
             <CountDownTimer direction='down' enableReset start={time} setGuessed={setGuessed} guessed={guessed} setTime={setTime} stop={completed} setStop={setCompleted} />
             <Finish hideTime hideMistakes time={time} guessed={operationIndex} mistakes={mistakes} hidden={!completed} />
             <GameView />
