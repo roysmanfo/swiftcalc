@@ -42,10 +42,10 @@ export default function Survival() {
                 setOperationIndex(operationIndex + 1);
             else setCompleted(true);
         } else {
-            if (!completed){
+            if (!completed) {
                 setLifes(lifes - 1)
                 setMinstakes(mistakes + 1);
-                if(lifes - 1 <= 0){
+                if (lifes - 1 <= 0) {
                     setCompleted(true);
                     setTime('0:00');
                     setGuessed(true);
@@ -57,7 +57,7 @@ export default function Survival() {
                 inputRef.current.focus();
             }, 500);
         }
-        
+
         // Generate more operations if needed
         if (operationIndex === operations.length - 1)
             generateOperations(MAX_OPERATIONS).forEach((op) => operations.push(op))
