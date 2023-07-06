@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
-import "../css/modes/run.css";
+import "../css/modes/modes.css";
 import Animation from "../components/Animation";
 import generateOperations from "../components/Generator";
 import Finish from "../components/Finish";
