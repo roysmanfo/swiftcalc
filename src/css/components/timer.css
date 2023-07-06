@@ -12,6 +12,9 @@
     filter: drop-shadow(5px 4px 0 #60f);
     transition: 250ms ease;
 }
+.timer.red{
+    filter: drop-shadow(5px 4px 0 #f55);
+}
 .timer.hidden{
     opacity: 0;
     z-index: -9999;

@@ -41,5 +41,5 @@ export default function CountDownTimer(props) {
 
     }, [seconds, min, props]);
 
-    return <div className={`timer${props.stop ? " hidden" : ""}`}>{time}</div>;
+    return <div className={`timer${props.stop ? " hidden" : ""}${min === 0 && seconds <= 10 ? " red" : ""}`}>{time}</div>;
 }
