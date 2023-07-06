@@ -33,9 +33,9 @@ export default function CountDownTimer(props) {
         return () => {
             clearInterval(intervalRef.current);
         };
-
+        // eslint-disable-next-line
     }, []);
-
+    
     useEffect(() => {
 
 
@@ -52,7 +52,7 @@ export default function CountDownTimer(props) {
             props.setStop(true);
 
         if (min <= 0 && seconds <= 0) return;
-
+        // eslint-disable-next-line
     }, [seconds, min, props]);
 
     return <div className={`timer${props.stop ? " hidden" : ""}${min === 0 && seconds <= 10 ? " red" : ""}`}>{time}</div>;
