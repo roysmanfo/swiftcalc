@@ -5,6 +5,7 @@
     width: max-content;
     min-height: 50vh;
     min-width: 50vw;
+    max-width: 75%;
     padding: 2rem;
     text-align: center;
     margin: auto;
