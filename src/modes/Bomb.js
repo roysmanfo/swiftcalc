@@ -32,11 +32,12 @@ export default function Bomb() {
         if (parseInt(inputValue) === operations[operationIndex].result) {
             operations[operationIndex].guessed = true;
             setInputValue("");
-            if (time !== '0:00')
+            if (!completed)
                 setOperationIndex(operationIndex + 1);
             else setCompleted(true);
         } else {
-            setMinstakes(mistakes + 1);
+            if (!completed)
+                setMinstakes(mistakes + 1);
             setIsWrong(true);
             setTimeout(() => {
                 setIsWrong(false);
