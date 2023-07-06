@@ -20,7 +20,11 @@ export default function TitleScreen(props) {
         },
         {
             "name": "Survival",
-            "description": "Do as many points as you can with just 3 lives"
+            "description": "Do as many points as you can with just 3 hearts"
+        },
+        {
+            "name": "Hardcore",
+            "description": "Like survival, but with just 1 heart"
         },
     ]
 
