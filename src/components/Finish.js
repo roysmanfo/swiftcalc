@@ -56,7 +56,7 @@ export default function Finish(props) {
                     <Guessed />
                     <Mistakes />
                 </div>
-                <button onClick={() => window.location.reload()}>Play again</button>
+                {/* <button onClick={() => window.location.reload()}>Play again</button> */}
                 <Link to='/'>
                     <button>Title Screen</button>
                 </Link>
