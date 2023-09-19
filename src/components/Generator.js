@@ -1,17 +1,4 @@
-
-class Operation{
-    constructor(val1, val2, sign, result, guessed){
-        this.val1 = val1;
-        this.val2 = val2
-        this.sign = sign;
-        this.result = result;
-        this.guessed = guessed;
-    }
-
-    toString(){
-        return `${this.val1} ${this.sign} ${this.val2}`
-    }
-}
+import { Operation } from "./Operation";
 
 export default function generateOperations(max) {
     const allOperations = [];
