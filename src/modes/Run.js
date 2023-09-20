@@ -3,7 +3,7 @@ import "../css/modes/modes.css";
 import "../css/responsive.css"
 import Animation from "../components/Animation";
 import Timer from "../components/Timer";
-import generateOperations from "../components/Generator";
+import generateOperations from "../components/Generator.ts";
 import Finish from "../components/Finish";
 import Counter from "../components/Counter";
 import Countdown from "../components/Countdown";

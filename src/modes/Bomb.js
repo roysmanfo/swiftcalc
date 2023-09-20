@@ -3,15 +3,15 @@ import "../css/modes/modes.css";
 import "../css/responsive.css"
 import Animation from "../components/Animation";
 import CountDownTimer from "../components/CountDownTimer";
-import generateOperations from "../components/Generator";
+import generateOperations from "../components/Generator.ts";
 import Finish from "../components/Finish";
 import Counter from "../components/Counter";
 import Countdown from "../components/Countdown";
 
 const MAX_OPERATIONS = 30;
-const operations = generateOperations(MAX_OPERATIONS);
 
 export default function Bomb() {
+    const operations = generateOperations(MAX_OPERATIONS);
     const [time, setTime] = useState("1:00");
 
     const inputRef = useRef(null);
