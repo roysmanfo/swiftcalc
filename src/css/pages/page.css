@@ -1,0 +1,28 @@
+.privacy-policy {
+  color: #fff;
+  margin: 0 auto;
+  width: 75vw;
+  display: flex;
+  min-height: 100vh;
+}
+.privacy-policy .privacy-article {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  width: -moz-max-content;
+  width: max-content;
+}
+.privacy-policy .privacy-article .title {
+  font-size: 7em;
+  text-transform: uppercase;
+  font-weight: 900;
+  width: 70%;
+  margin: 0;
+}
+.privacy-policy .privacy-article .policy {
+  font-size: 1.5em;
+  width: 70%;
+  font-weight: 600;
+}/*# sourceMappingURL=page.css.map */

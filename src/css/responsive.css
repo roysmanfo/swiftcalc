@@ -85,4 +85,10 @@
   .finish-screen .stats p {
     font-size: 2rem !important;
   }
+  .privacy-article .title {
+    font-size: 2em !important;
+  }
+  .privacy-article .policy {
+    font-size: 1em !important;
+  }
 }/*# sourceMappingURL=responsive.css.map */

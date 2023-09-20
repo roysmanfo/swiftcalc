@@ -5,6 +5,8 @@ import { useParams } from "react-router-dom";
 
 import './css/app.css';
 import "./css/responsive.css"
+import Privacy from "./pages/Privacy";
+import Loading from "./components/Loading";
 
 const Run = lazy(() => import('./modes/Run'));
 const Bomb = lazy(() => import('./modes/Bomb'));
@@ -14,10 +16,11 @@ const Hardcore = lazy(() => import('./modes/Hardcore'));
 export default function App() {
 	return (
 		<BrowserRouter>
-			<Suspense fallback={<div>Loading...</div>}>
+			<Suspense fallback={<Loading />}>
 
 				<Routes>
 					<Route path="/" element={<TitleScreen />} />
+					<Route path="/privacy" element={<Privacy />} />
 					<Route path="/mode/:gamemode" element={<Switch />} />
 				</Routes>
 			</Suspense>

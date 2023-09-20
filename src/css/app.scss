@@ -30,5 +30,20 @@ button:hover, button:focus{
 	}
 }
 
+.loading{
+	@keyframes spin-loading {
+		to {rotate: 1turn;}
+	}
+
+	$size: 3em;
+	$thickness: 1.3em;
+	margin: auto;
+	width: $size;
+	height: $size;
+	border: solid $thickness #fff;
+	border-top: solid $thickness transparent; 
+	border-radius: 50%;
+	animation: spin-loading .5s ease-in-out infinite;
+}
 
 @import "./responsive.scss";
