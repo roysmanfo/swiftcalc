@@ -1,4 +1,4 @@
-import { Operation } from "./Operation";
+import { Operation } from "./Operation.ts";
 
 export default function generateOperations(max) {
     const allOperations = [];
