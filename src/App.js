@@ -7,6 +7,7 @@ import './css/app.css';
 import "./css/responsive.css"
 import Privacy from "./pages/Privacy";
 import Loading from "./components/Loading";
+import PageNotFound from "./pages/404";
 
 const Run = lazy(() => import('./modes/Run'));
 const Bomb = lazy(() => import('./modes/Bomb'));
@@ -22,6 +23,7 @@ export default function App() {
 					<Route path="/" element={<TitleScreen />} />
 					<Route path="/privacy" element={<Privacy />} />
 					<Route path="/mode/:gamemode" element={<Switch />} />
+					<Route path="/*" element={<PageNotFound />} />
 				</Routes>
 			</Suspense>
 		</BrowserRouter>

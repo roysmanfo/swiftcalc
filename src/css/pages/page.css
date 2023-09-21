@@ -1,28 +1,48 @@
-.privacy-policy {
+.privacy-policy, .page-not-found {
   color: #fff;
   margin: 0 auto;
   width: 75vw;
   display: flex;
   min-height: 100vh;
 }
-.privacy-policy .privacy-article {
+.privacy-policy .privacy-article, .privacy-policy .error, .page-not-found .privacy-article, .page-not-found .error {
   display: flex;
   flex-direction: column;
   margin: auto;
-  align-items: center;
   justify-content: center;
   width: -moz-max-content;
   width: max-content;
 }
-.privacy-policy .privacy-article .title {
+.privacy-policy .privacy-article.animate, .privacy-policy .error.animate, .page-not-found .privacy-article.animate, .page-not-found .error.animate {
+  opacity: 0;
+  transform: translateY(5em);
+  animation: animate 1s ease 0.25s forwards;
+}
+.privacy-policy .privacy-article .title, .privacy-policy .error .title, .page-not-found .privacy-article .title, .page-not-found .error .title {
   font-size: 7em;
   text-transform: uppercase;
   font-weight: 900;
   width: 70%;
   margin: 0;
 }
-.privacy-policy .privacy-article .policy {
+.privacy-policy .privacy-article .subtitle, .privacy-policy .error .subtitle, .page-not-found .privacy-article .subtitle, .page-not-found .error .subtitle {
+  text-transform: uppercase;
+  width: 70%;
+  margin: 0;
+  font-size: 2rem;
+}
+.privacy-policy .privacy-article .policy, .privacy-policy .privacy-article .message, .privacy-policy .error .policy, .privacy-policy .error .message, .page-not-found .privacy-article .policy, .page-not-found .privacy-article .message, .page-not-found .error .policy, .page-not-found .error .message {
   font-size: 1.5em;
   width: 70%;
   font-weight: 600;
+}
+.privacy-policy .privacy-article .message, .privacy-policy .error .message, .page-not-found .privacy-article .message, .page-not-found .error .message {
+  font-weight: 500;
+}
+
+@keyframes animate {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }/*# sourceMappingURL=page.css.map */

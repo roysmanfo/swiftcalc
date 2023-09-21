@@ -1,31 +1,51 @@
-.privacy-policy{
+.privacy-policy, .page-not-found{
     color: #fff;
     margin: 0 auto;
     width: 75vw;
     display: flex;
     min-height: 100vh;
 
-    .privacy-article{
+    .privacy-article, .error{
         display: flex;
         flex-direction: column;
         margin: auto;
-        align-items: center;
+        // align-items: center;
         justify-content: center;
         width: max-content;
+
+        &.animate{
+            opacity: 0;
+            transform: translateY(5em);
+            animation: animate 1s ease .25s forwards;
+        }
 
         .title{
             font-size: 7em;
             text-transform: uppercase;
             font-weight: 900;
             width: 70%;
-            // text-align: center;
             margin: 0;
         }
-        .policy{
+        .subtitle{
+            text-transform: uppercase;
+            width: 70%;
+            margin: 0;
+            font-size: 2rem;
+        }
+        .policy, .message{
             font-size: 1.5em;
-            // text-align: center;
             width: 70%;
             font-weight: 600;
+        }   
+        .message{
+            font-weight: 500;
         }
+    }
+}
+
+@keyframes animate {
+    to{
+        opacity: 1;
+        transform: translateY(0);
     }
 }

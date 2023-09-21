@@ -5,7 +5,7 @@ export default function Privacy(){
 
     return (
         <main className="privacy-policy">
-            <article className="privacy-article">
+            <article className="privacy-article animate">
                 <h1 className="title">Privacy</h1>
                 <p className="policy">
                     SwiftCalc respects your privacy and will never share any of the information you provide to us with anyone else, 
