@@ -1,3 +1,7 @@
+body:has(.titlescreen) {
+  overflow: hidden;
+}
+
 .titlescreen {
   color: #fff;
   position: absolute;
@@ -36,7 +40,6 @@
   color: #222;
 }
 .titlescreen .title, .titlescreen .gamemodes {
-  transition: 1s ease;
   z-index: 0;
   width: -moz-max-content;
   width: max-content;
@@ -51,7 +54,6 @@
 .titlescreen .hidden {
   opacity: 0;
   z-index: -9999;
-  transform: translate(-50%, 200%) !important;
 }
 .titlescreen .gamemodes {
   position: absolute;
