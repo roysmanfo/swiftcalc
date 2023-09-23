@@ -18,7 +18,6 @@ export default function App() {
 	return (
 		<BrowserRouter>
 			<Suspense fallback={<Loading />}>
-
 				<Routes>
 					<Route path="/" element={<TitleScreen />} />
 					<Route path="/privacy" element={<Privacy />} />
@@ -38,6 +37,6 @@ function Switch() {
 		case 'bomb': return <Bomb />;
 		case 'survival': return <Survival />;
 		case 'hardcore': return <Hardcore />;
-		default: return <App />;
+		default: return <PageNotFound />;
 	}
 }
