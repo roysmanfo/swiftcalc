@@ -59,8 +59,23 @@ body:has(.titlescreen) {
   justify-content: center;
 }
 .titlescreen .title .legal-info a {
+  text-decoration: none;
   color: #bbb;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
+  position: relative;
+}
+.titlescreen .title .legal-info a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #222;
+  transition: 250ms;
+}
+.titlescreen .title .legal-info a:where(:focus, :hover)::before {
+  width: 100%;
 }
 .titlescreen .hidden {
   opacity: 0;

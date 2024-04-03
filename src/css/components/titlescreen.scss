@@ -63,8 +63,27 @@ body:has(.titlescreen){
             justify-content: center;
 
             a {
+                text-decoration: none;
                 color: #bbb;
-                padding-bottom: 10px;
+                padding-bottom: 5px;
+                position: relative;
+                
+                &::before {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 0;
+                    height: 1px;
+                    background-color: #222;
+                    transition: 250ms;
+                }
+
+                &:where(:focus, :hover){
+                    &::before{
+                        width: 100%;
+                    }
+                }
             }
         }
     }
