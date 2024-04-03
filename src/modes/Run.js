@@ -12,7 +12,7 @@ import Countdown from "../components/Countdown";
 const MAX_OPERATIONS = 30;
 const operations = generateOperations(MAX_OPERATIONS);
 
-export default function Run() {
+export default function Run(props) {
     const [time, setTime] = useState("0");
 
     const inputRef = useRef(null);
@@ -48,7 +48,8 @@ export default function Run() {
 
     useEffect(() => {
         const handleMouseDown = (event) => {
-            handleGlobalMouseDown(event);
+            if (!props.isMobile)
+                handleGlobalMouseDown(event);
         };
 
         document.addEventListener("mousedown", handleMouseDown);

@@ -10,7 +10,7 @@ import Countdown from "../components/Countdown";
 
 const MAX_OPERATIONS = 30;
 
-export default function Bomb() {
+export default function Bomb(props) {
     const operations = generateOperations(MAX_OPERATIONS);
     const [time, setTime] = useState("1:00");
 
@@ -52,7 +52,8 @@ export default function Bomb() {
 
     useEffect(() => {
         const handleMouseDown = (event) => {
-            handleGlobalMouseDown(event);
+            if (!props.isMobile)
+                handleGlobalMouseDown(event);
         };
 
         document.addEventListener("mousedown", handleMouseDown);

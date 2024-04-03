@@ -9,12 +9,11 @@ import Countdown from "../components/Countdown";
 import LifeCounter from "../components/LifeCounter";
 import CountDownTimer from "../components/CountDownTimer"
 
-
 const MAX_OPERATIONS = 30;
 const operations = generateOperations(MAX_OPERATIONS);
 const MAX_TIME = "0:10";
 
-export default function Hardcore() {
+export default function Hardcore(props) {
     const [time, setTime] = useState(MAX_TIME);
 
     const inputRef = useRef(null);
@@ -66,7 +65,8 @@ export default function Hardcore() {
 
     useEffect(() => {
         const handleMouseDown = (event) => {
-            handleGlobalMouseDown(event);
+            if (!props.isMobile)
+                handleGlobalMouseDown(event);
         };
 
         document.addEventListener("mousedown", handleMouseDown);

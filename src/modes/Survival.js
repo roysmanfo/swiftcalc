@@ -14,7 +14,7 @@ const MAX_OPERATIONS = 30;
 const operations = generateOperations(MAX_OPERATIONS);
 const MAX_TIME = "0:05";
 
-export default function Survival() {
+export default function Survival(props) {
     const [time, setTime] = useState(MAX_TIME);
 
     const inputRef = useRef(null);
@@ -66,7 +66,8 @@ export default function Survival() {
 
     useEffect(() => {
         const handleMouseDown = (event) => {
-            handleGlobalMouseDown(event);
+            if (!props.isMobile)
+                handleGlobalMouseDown(event);
         };
 
         document.addEventListener("mousedown", handleMouseDown);
