@@ -51,6 +51,17 @@ body:has(.titlescreen) {
   flex-direction: column;
   align-items: center;
 }
+.titlescreen .title .legal-info {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+  width: 100%;
+  justify-content: center;
+}
+.titlescreen .title .legal-info a {
+  color: #bbb;
+  padding-bottom: 10px;
+}
 .titlescreen .hidden {
   opacity: 0;
   z-index: -9999;

@@ -56,6 +56,9 @@ export default function TitleScreen(props) {
                     <h1>SwiftCalc</h1>
                     <p>Complete mathematical operations as fast as you can</p>
                     <button onClick={() => setModesAreVisible(true)}>Select a mode</button>
+                    <div className='legal-info'>
+                        <Link to="/privacy"><small>Privacy policy</small></Link>
+                    </div>
                 </div>
                 {modesAreVisible && (
                     <div className="gamemodes">

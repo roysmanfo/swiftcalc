@@ -133,4 +133,25 @@ button:hover, button:focus {
   .finish-screen .stats p {
     font-size: 2rem !important;
   }
+  .privacy-article {
+    align-items: center;
+  }
+  .privacy-article .title {
+    font-size: 2em !important;
+  }
+  .privacy-article .policy {
+    font-size: 1em !important;
+  }
+  .error > * {
+    width: 100% !important;
+  }
+  .error .title {
+    font-size: 4em !important;
+  }
+  .error .subtitle {
+    font-size: 1.1rem !important;
+  }
+  .error p {
+    font-size: 0.9em !important;
+  }
 }/*# sourceMappingURL=app.css.map */

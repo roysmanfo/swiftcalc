@@ -6,6 +6,9 @@
   .titlescreen p {
     font-size: 0.6em !important;
   }
+  .titlescreen small {
+    font-size: 0.4em !important;
+  }
   .titlescreen button {
     padding: 2em !important;
     font-size: 1em !important;
