@@ -21,10 +21,11 @@ export default function Survival(props) {
     const [inputValue, setInputValue] = useState("");
     const [operationIndex, setOperationIndex] = useState(0);
     const [completed, setCompleted] = useState(false);
-    const [mistakes, setMinstakes] = useState(0);
+    const [mistakes, setMistakes] = useState(0);
     const [isWrong, setIsWrong] = useState(false);
     const [lifes, setLifes] = useState(3);
     const [guessed, setGuessed] = useState(false);
+    const [guesses, setGuesses] = useState(0);
 
     const handleGlobalMouseDown = (event) => {
         if (!inputRef.current.contains(event.target)) {
@@ -39,20 +40,29 @@ export default function Survival(props) {
             setGuessed(true);
             setTime(MAX_TIME)
             setInputValue("");
+            setGuesses(guesses + 1);
             if (!completed)
                 setOperationIndex(operationIndex + 1);
-            else setCompleted(true);
+            else 
+                setCompleted(true);
         } else {
             if (!completed) {
                 setLifes(lifes - 1)
-                setMinstakes(mistakes + 1);
+                setMistakes(mistakes + 1);
                 if (lifes - 1 <= 0) {
-                    setCompleted(true);
                     setTime('0:00');
                     setGuessed(true);
+                    setCompleted(true);
+                    setMistakes(3);
+                    return;
                 }
             }
             setIsWrong(true);
+
+            setTime(() => {setGuessed(true); return MAX_TIME});
+            setInputValue("");
+            setOperationIndex(operationIndex + 1);
+
             setTimeout(() => {
                 setIsWrong(false);
                 inputRef.current.focus();
@@ -106,9 +116,9 @@ export default function Survival(props) {
             <Countdown />
             <Animation className="" />
             <LifeCounter lifes={lifes} completed={completed} />
-            <Counter mode='survival' curentOperation={operationIndex} />
+            <Counter mode='survival' curentOperation={guesses} />
             <CountDownTimer direction='down' enableReset start={time} setGuessed={setGuessed} guessed={guessed} setTime={setTime} stop={completed} setStop={setCompleted} />
-            <Finish hideTime hideMistakes time={time} guessed={operationIndex} mistakes={mistakes} hidden={!completed} />
+            <Finish hideTime hideMistakes time={time} guessed={guesses} mistakes={mistakes} hidden={!completed} />
             <GameView />
         </>
     );
